@@ -15,6 +15,11 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<!-- Override Spring Framework version to remediate CVE-2016-1000027 (RCE via unsafe deserialization).
+		     spring-boot-starter-parent 2.6.7 manages spring-webmvc 5.3.19, which is vulnerable.
+		     Upgrading to 5.3.31-wso2v1 eliminates the vulnerable HttpInvokerServiceExporter
+		     remote deserialization endpoint. -->
+		<spring-framework.version>5.3.31-wso2v1</spring-framework.version>
 	</properties>
 	<developers>
 		<developer>
