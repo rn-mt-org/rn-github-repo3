@@ -15,6 +15,11 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<!-- CVE-2016-1000027: Upgrade Spring Framework to remediate RCE via unsafe Java deserialization.
+		     Spring Boot 2.6.7 ships spring-framework 5.3.19 by default; overriding to 5.3.31
+		     removes the vulnerable HttpInvoker deserialization path (deprecated in 5.3.x,
+		     removed in 6.0) and incorporates all security patches up to 5.3.31. -->
+		<spring-framework.version>5.3.31</spring-framework.version>
 	</properties>
 	<developers>
 		<developer>
