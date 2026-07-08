@@ -15,6 +15,10 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<!-- Override transitive Tomcat version to fix CVE-2024-56337 (TOCTOU race condition).
+		     Spring Boot 2.6.7 bundles tomcat-embed-core 9.0.62 which is vulnerable.
+		     CVE-2024-56337 is fixed in Tomcat 9.0.99+. -->
+		<tomcat.version>9.0.99</tomcat.version>
 	</properties>
 	<developers>
 		<developer>
